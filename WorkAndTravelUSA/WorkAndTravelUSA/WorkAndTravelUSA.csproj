@@ -168,7 +168,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,10 +180,25 @@
     <Compile Include="Migrations\202001071245337_initial.Designer.cs">
       <DependentUpon>202001071245337_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001221740368_secondMigration.cs" />
+    <Compile Include="Migrations\202001221740368_secondMigration.Designer.cs">
+      <DependentUpon>202001221740368_secondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221823027_thirdMigrations.cs" />
+    <Compile Include="Migrations\202001221823027_thirdMigrations.Designer.cs">
+      <DependentUpon>202001221823027_thirdMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221841245_4Migration.cs" />
+    <Compile Include="Migrations\202001221841245_4Migration.Designer.cs">
+      <DependentUpon>202001221841245_4Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221947550_5Migration.cs" />
+    <Compile Include="Migrations\202001221947550_5Migration.Designer.cs">
+      <DependentUpon>202001221947550_5Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\ClientLoc.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
@@ -245,6 +263,21 @@
     <Content Include="Views\Layout\Index.cshtml" />
     <Content Include="Views\Layout\About.cshtml" />
     <Content Include="Views\Layout\Contact.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,6 +298,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001071245337_initial.resx">
       <DependentUpon>202001071245337_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221740368_secondMigration.resx">
+      <DependentUpon>202001221740368_secondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221823027_thirdMigrations.resx">
+      <DependentUpon>202001221823027_thirdMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221841245_4Migration.resx">
+      <DependentUpon>202001221841245_4Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221947550_5Migration.resx">
+      <DependentUpon>202001221947550_5Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -315,3 +315,7 @@ D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkA
 D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.pdb
 D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations.initial.resources
 D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.csproj.GenerateResource.cache
+D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations.secondMigration.resources
+D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations.thirdMigrations.resources
+D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations._4Migration.resources
+D:\FINKI VI SEMESTAR\IT\Project 07.01 v2\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations._5Migration.resources

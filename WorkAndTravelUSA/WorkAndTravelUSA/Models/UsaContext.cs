@@ -12,7 +12,7 @@ namespace WorkAndTravelUSA.Models
         public DbSet<Client> clientModels { get; set; }
         public DbSet<Location> locationModels { get; set; }
         public DbSet<Comment> commentModels { get; set; }
-        public DbSet<ClientLoc> clientLocModels { get; set; }
+        
 
         public UsaContext():base("DefaultConnection")
         {

@@ -11,6 +11,9 @@ namespace WorkAndTravelUSA.Models
         public Comment () { }
         [Key]
         public int Id { get; set; }
+        
+        public int idClient { get; set; }
+        public int IdLoc { get; set; }
         [Required]
         public string Description { get; set; }
     }
