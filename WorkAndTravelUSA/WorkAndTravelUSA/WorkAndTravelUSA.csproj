@@ -168,7 +168,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
@@ -195,6 +194,18 @@
     <Compile Include="Migrations\202001221947550_5Migration.cs" />
     <Compile Include="Migrations\202001221947550_5Migration.Designer.cs">
       <DependentUpon>202001221947550_5Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001231959380_6Migration.cs" />
+    <Compile Include="Migrations\202001231959380_6Migration.Designer.cs">
+      <DependentUpon>202001231959380_6Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001232044221_7Migration.cs" />
+    <Compile Include="Migrations\202001232044221_7Migration.Designer.cs">
+      <DependentUpon>202001232044221_7Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001232052326_8Migration.cs" />
+    <Compile Include="Migrations\202001232052326_8Migration.Designer.cs">
+      <DependentUpon>202001232052326_8Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -263,11 +274,6 @@
     <Content Include="Views\Layout\Index.cshtml" />
     <Content Include="Views\Layout\About.cshtml" />
     <Content Include="Views\Layout\Contact.cshtml" />
-    <Content Include="Views\Clients\Create.cshtml" />
-    <Content Include="Views\Clients\Delete.cshtml" />
-    <Content Include="Views\Clients\Details.cshtml" />
-    <Content Include="Views\Clients\Edit.cshtml" />
-    <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
@@ -310,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001221947550_5Migration.resx">
       <DependentUpon>202001221947550_5Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001231959380_6Migration.resx">
+      <DependentUpon>202001231959380_6Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001232044221_7Migration.resx">
+      <DependentUpon>202001232044221_7Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001232052326_8Migration.resx">
+      <DependentUpon>202001232052326_8Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

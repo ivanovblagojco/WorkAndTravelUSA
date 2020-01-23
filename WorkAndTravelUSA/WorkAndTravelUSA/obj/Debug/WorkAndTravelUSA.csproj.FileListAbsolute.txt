@@ -430,3 +430,6 @@ C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\o
 C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.csproj.CopyComplete
 C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.dll
 C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.pdb
+C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations._6Migration.resources
+C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations._7Migration.resources
+C:\Users\KRSTEV\Desktop\WPA\WorkAndTravelUSA\WorkAndTravelUSA\WorkAndTravelUSA\obj\Debug\WorkAndTravelUSA.Migrations._8Migration.resources
