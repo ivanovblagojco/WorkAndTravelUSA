@@ -61,3 +61,11 @@
 
 
 </p>
+<ul>
+    @foreach(WorkAndTravelUSA.Models.Comment comment in Model.Comments)
+    {
+        <li>
+             @Request.Cookies[comment.idClient.ToString()].Value.ToString() | @comment.Description
+        </li>
+    }
+</ul>

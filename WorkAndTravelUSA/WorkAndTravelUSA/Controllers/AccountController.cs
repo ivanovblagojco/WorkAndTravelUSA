@@ -17,6 +17,7 @@ namespace WorkAndTravelUSA.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private UsaContext db = new UsaContext();
 
         public AccountController()
         {
@@ -152,6 +153,23 @@ namespace WorkAndTravelUSA.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
+                Client client = new Client();
+                //da dodademe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

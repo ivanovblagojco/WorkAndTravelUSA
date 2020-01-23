@@ -24,7 +24,7 @@ namespace WorkAndTravelUSA.Controllers
         public ActionResult CreateComment(int id)
         {
             var model = new Comment();
-            model.idClient = 1; //da se dodade
+            model.idClient = 2; //da se dodade
             model.IdLoc = id;
             return RedirectToAction("Create", "Comments", model);
         }

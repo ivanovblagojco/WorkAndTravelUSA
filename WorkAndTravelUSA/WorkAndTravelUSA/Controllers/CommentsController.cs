@@ -51,9 +51,17 @@ namespace WorkAndTravelUSA.Controllers
             if (ModelState.IsValid)
             {
                 db.commentModels.Add(comment);
+
+                String st = "Details/" + comment.IdLoc;
+                var model = db.locationModels.Find(comment.IdLoc);
+                model.Comments.Add(comment);
+
+                int cid = comment.idClient;
+                String cname = db.clientModels.Find(comment.idClient).Name;
+                Response.Cookies.Add(new HttpCookie(cid.ToString(), cname));
                 db.SaveChanges();
-                String st= "Details/"+comment.IdLoc;
-                return RedirectToAction(st,"Locations");
+
+                return RedirectToAction(st, "Locations");
             }
 
             return View(comment);
