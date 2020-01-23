@@ -170,7 +170,7 @@ namespace WorkAndTravelUSA.Controllers
                     //da dodademe
 
 
-                   
+                    client.oduser = user.Email;
                     client.Name = model.Name;
                     client.Surname = model.Surname;
                     client.Age = model.Age;

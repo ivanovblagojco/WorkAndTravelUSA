@@ -25,7 +25,9 @@ namespace WorkAndTravelUSA.Controllers
         {
             var model = new Comment();
 
-         //   model.idClient =db.clientModels.Find(User.Identity.Name).Id; //da se dodade
+            var q = db.clientModels.Single(u => u.oduser == User.Identity.Name);
+            model.idClient = q.Id;
+
             model.IdLoc = id;
             return RedirectToAction("Create", "Comments", model);
         }

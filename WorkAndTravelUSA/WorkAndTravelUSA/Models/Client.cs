@@ -11,6 +11,7 @@ namespace WorkAndTravelUSA.Models
         public Client () {}
         [Key]
         public int Id { get; set; }
+        public string oduser { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
