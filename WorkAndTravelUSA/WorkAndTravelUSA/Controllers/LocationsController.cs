@@ -10,13 +10,16 @@ using WorkAndTravelUSA.Models;
 
 namespace WorkAndTravelUSA.Controllers
 {
+    [Authorize]
     public class LocationsController : Controller
     {
         private UsaContext db = new UsaContext();
 
         // GET: Locations
+        [AllowAnonymous]
         public ActionResult Index()
         {
+          
             return View(db.locationModels.ToList());
         }
 
@@ -32,6 +35,7 @@ namespace WorkAndTravelUSA.Controllers
             return RedirectToAction("Create", "Comments", model);
         }
         // GET: Locations/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -61,6 +65,7 @@ namespace WorkAndTravelUSA.Controllers
         {
             if (ModelState.IsValid)
             {
+                location.IdClient = db.clientModels.Single(u => u.oduser == User.Identity.Name).Id;
                 db.locationModels.Add(location);
                 db.SaveChanges();
                 return RedirectToAction("Index");

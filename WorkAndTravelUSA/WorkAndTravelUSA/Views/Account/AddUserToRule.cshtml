@@ -1,0 +1,21 @@
+﻿@model WorkAndTravelUSA.Models.AddUserToRule
+@{
+    ViewBag.Title = "AddUserToRule";
+}
+
+<h2>Add User To Rule</h2>
+
+@using (Html.BeginForm("AddUserToRule", "Account"))
+{
+    <h3>Select user</h3>
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.EditorFor(m => m.Email, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.selectedRole, new SelectList(Model.roles),new { @class="form-control"})
+    </div>
+    <button type="submit" class="btn btn-default">Save</button>
+
+}
+

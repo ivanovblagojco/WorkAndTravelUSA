@@ -53,6 +53,34 @@ namespace WorkAndTravelUSA.Controllers
             }
         }
 
+        // GET: /Account/Login
+        [Authorize(Roles ="Administrator")]
+        public ActionResult AddUserToRule()
+        {
+            var model = new AddUserToRule();
+            model.roles.Add("User");
+            model.roles.Add("Administrator");
+            return View(model);
+        }
+
+        [Authorize(Roles = "Administrator")]
+        [HttpPost]
+        public ActionResult AddUserToRule(AddUserToRule model)
+        {
+            try
+            {
+                var user = UserManager.FindByEmail(model.Email);
+                UserManager.AddToRole(user.Id, model.selectedRole);
+                return RedirectToAction("Index", "Locations");
+            }
+            catch(Exception)
+            {
+                return HttpNotFound();
+            }
+        }
+
+
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -406,7 +434,7 @@ namespace WorkAndTravelUSA.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Locations");
         }
 
         //
@@ -463,7 +491,7 @@ namespace WorkAndTravelUSA.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Locations");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
