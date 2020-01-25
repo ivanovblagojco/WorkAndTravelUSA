@@ -22,6 +22,9 @@ namespace WorkAndTravelUSA.Models
         [Required]
         public string imgUrl { get; set; }
 
+        public int Raiting { get; set; }
+        public int NumOfRatings { get; set; }
+        public int finalRating { get; set; }
         public virtual List<Comment> Comments { get; set;}
 
     }

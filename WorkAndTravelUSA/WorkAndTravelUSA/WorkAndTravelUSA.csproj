@@ -212,6 +212,18 @@
     <Compile Include="Migrations\202001232058076_10Migration.Designer.cs">
       <DependentUpon>202001232058076_10Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001251053065_11-thMigration.cs" />
+    <Compile Include="Migrations\202001251053065_11-thMigration.Designer.cs">
+      <DependentUpon>202001251053065_11-thMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001251325582_12thMigration.cs" />
+    <Compile Include="Migrations\202001251325582_12thMigration.Designer.cs">
+      <DependentUpon>202001251325582_12thMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001251334238_13-thMigration.cs" />
+    <Compile Include="Migrations\202001251334238_13-thMigration.Designer.cs">
+      <DependentUpon>202001251334238_13-thMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -338,6 +350,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001232058076_10Migration.resx">
       <DependentUpon>202001232058076_10Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251053065_11-thMigration.resx">
+      <DependentUpon>202001251053065_11-thMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251325582_12thMigration.resx">
+      <DependentUpon>202001251325582_12thMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251334238_13-thMigration.resx">
+      <DependentUpon>202001251334238_13-thMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

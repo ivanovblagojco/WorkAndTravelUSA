@@ -100,6 +100,32 @@ namespace WorkAndTravelUSA.Controllers
             return View(location);
         }
 
+        [HttpPost]
+        public JsonResult SaveLocationRating(Location location)
+        {
+            
+            if (db.locationModels.Find(location.Id).NumOfRatings != 0)
+            {
+                db.locationModels.Find(location.Id).Raiting = db.locationModels.Find(location.Id).Raiting + location.Raiting;
+                db.locationModels.Find(location.Id).NumOfRatings = db.locationModels.Find(location.Id).NumOfRatings + 1;
+                db.SaveChanges();
+
+                db.locationModels.Find(location.Id).finalRating = db.locationModels.Find(location.Id).Raiting / db.locationModels.Find(location.Id).NumOfRatings;
+                
+
+            }
+            else
+            {
+                db.locationModels.Find(location.Id).Raiting = location.Raiting;
+                db.locationModels.Find(location.Id).finalRating = location.Raiting;
+                db.locationModels.Find(location.Id).NumOfRatings = 1;
+            }
+
+
+            db.SaveChanges();
+
+            return Json(location);
+        }
         // GET: Locations/Delete/5
         public ActionResult Delete(int? id)
         {
