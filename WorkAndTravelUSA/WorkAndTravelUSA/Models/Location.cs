@@ -20,6 +20,8 @@ namespace WorkAndTravelUSA.Models
         [Required]
         public string Description { get; set; }
         [Required]
+        [Display(Name = "Image")]
+
         public string imgUrl { get; set; }
 
         public int Raiting { get; set; }
