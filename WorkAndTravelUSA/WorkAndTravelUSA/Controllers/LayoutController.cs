@@ -13,7 +13,7 @@ namespace WorkAndTravelUSA.Controllers
         // GET: Layout
         public ActionResult Index()
         {
-            ViewBag.Locations = db.locationModels.ToList();
+          
             return View();
         }
         public ActionResult About()

@@ -10,6 +10,7 @@ using WorkAndTravelUSA.Models;
 
 namespace WorkAndTravelUSA.Controllers
 {
+    [Authorize(Roles ="Administrator")]
     public class ClientsController : Controller
     {
         private UsaContext db = new UsaContext();

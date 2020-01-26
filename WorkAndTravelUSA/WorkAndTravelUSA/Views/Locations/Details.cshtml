@@ -2,103 +2,112 @@
 
 @{
     ViewBag.Title = "Details";
+    var db = new WorkAndTravelUSA.Models.UsaContext();
+    var cl1 = db.clientModels.Find(Model.IdClient).Name;
 }
 
-<h2>Details</h2>
+<div class="container">
 
-<div>
-    <h4>Location</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IdClient)
-        </dt>
+    <h2 class="text-center text-danger py-4">Details Location</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.IdClient)
-        </dd>
+    <div>
+        <hr />
+        <dl class="dl-horizontal row">
+            <div class="col-6 m-auto text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                <dt>
+                    Name of creator
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                <dd>
+                    @cl1
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.State)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.State)
+                </dd>
 
-        <dt>
-            Image:
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
 
-        <dd>
-            <img src="@Model.imgUrl" style="width:200px; height:200px" />
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
 
-    </dl>
+            </div>
 
+            <div class="col-6 m-auto">
+
+                <dd>
+                    <img src="@Model.imgUrl" style="width:30em; height:20em" />
+                </dd>
+
+            </div>
+
+        </dl>
+
+
+    </div>
+    <div class="text-center"    >
+        Raiting: <br />
+        <span class="text-warning">
+            <i class="ratingStar far fa-star" data-value="1"></i>
+            <i class="ratingStar far fa-star" data-value="2"></i>
+            <i class="ratingStar far fa-star" data-value="3"></i>
+            <i class="ratingStar far fa-star" data-value="4"></i>
+            <i class="ratingStar far fa-star" data-value="5"></i>
+        </span>
+        Average rating: @Model.finalRating
+        <input type="hidden" name="Rating" id="ratingsValue" />
+        <p>
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id })}
+            @Html.ActionLink("Back to List", "Index") |
+            @Html.ActionLink("Add comment", "CreateComment", new { id = Model.Id })
+
+
+
+        </p>
+
+       
+        Comments:
+        <ul style="list-style-type:none;">
+            @foreach (WorkAndTravelUSA.Models.Comment comment in Model.Comments)
+            {
+                <li>
+                    @{
+                        var cl = db.clientModels.Find(comment.idClient).Name;
+                    }
+                    <div class="bg-light">
+                        <p> <span class="text-danger">@cl</span> : @comment.Description</p>
+                    </div>
+                </li>
+            }
+        </ul>
+
+    </div>
 
 </div>
-Raiting: <br />
-<span class="text-warning">
-    <i class="ratingStar far fa-star" data-value="1"></i>
-    <i class="ratingStar far fa-star" data-value="2"></i>
-    <i class="ratingStar far fa-star" data-value="3"></i>
-    <i class="ratingStar far fa-star" data-value="4"></i>
-    <i class="ratingStar far fa-star" data-value="5"></i>
-</span>
-Average rating: @Model.finalRating
-<input type="hidden" name="Rating" id="ratingsValue" />
-<p>
-    @if(User.IsInRole("Administrator"))
-    {
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) }
-    @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Add comment", "CreateComment", new { id = Model.Id }) |
-
-
-
-</p>
-
-@{
-    var db = new WorkAndTravelUSA.Models.UsaContext();
-}
-
- Comments:
-<ul>
-    @foreach (WorkAndTravelUSA.Models.Comment comment in Model.Comments)
-    {
-        <li>
-            @{
-                var cl = db.clientModels.Find(comment.idClient).Name;
-            }
-            @cl | @comment.Description
-        </li>
-    }
-</ul>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript">
-
     $(document).ready(function () {
         $(".ratingStar").hover(function () {
             $(".ratingStar").addClass("far").removeClass("fas");
-
             $(this).addClass("fas").removeClass("far");
             $(this).prevAll(".ratingStar").addClass("fas").removeClass("far");
         });
@@ -106,7 +115,6 @@ Average rating: @Model.finalRating
     $(".ratingStar").click(function () {
         var starValue = $(this).attr("data-value");
         $("#ratingsValue").val(starValue);
-
         var jsonData = {
             Id: @Model.Id,
             Raiting: starValue
