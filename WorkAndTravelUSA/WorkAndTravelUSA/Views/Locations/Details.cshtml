@@ -127,26 +127,29 @@
                                 console.log(data);
                                 if (data == "Yes") {
                                     var jsonData = {
-                                    Id: @Model.Id,
-                                    Raiting: starValue
-                                };
+                                        Id: @Model.Id,
+                                        Raiting: starValue
+                                    };
 
 
-                                $.ajax({
-                                type: "POST",
-                                url: '@Url.Action("SaveLocationRating", "Locations")',
-                                contentType: "application/json;charset=utf-8",
-                                data: JSON.stringify(jsonData),
-                                dataType: "json",
-                                success: function() {
-                                    console.log("success");
+                                    $.ajax({
+                                        type: "POST",
+                                        url: '@Url.Action("SaveLocationRating", "Locations")',
+                                        contentType: "application/json;charset=utf-8",
+                                        data: JSON.stringify(jsonData),
+                                        dataType: "json",
+                                        success: function () {
+                                            console.log("success");
+                                        }
+                                    });
                                 }
-                                });
+                                else {
+                                    alert("You have already voted!")
                                 }
                                 
                             },
                             error: function () {
-                                alert("Failed! Please try again.");
+                                alert("You must be logged in");
                             }
                         });
         //here I end
