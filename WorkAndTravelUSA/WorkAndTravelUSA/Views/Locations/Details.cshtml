@@ -78,6 +78,10 @@
                 @Html.ActionLink("Edit", "Edit", new { id = Model.Id })}
             @Html.ActionLink("Back to List", "Index") |
             @Html.ActionLink("Add comment", "CreateComment", new { id = Model.Id })
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+            }
 
 
 

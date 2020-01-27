@@ -116,7 +116,7 @@ namespace WorkAndTravelUSA.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    return RedirectToAction("Index", "Locations"); 
             }
         }
 
@@ -206,13 +206,13 @@ namespace WorkAndTravelUSA.Controllers
                     client.hasVote = "No";
                     db.clientModels.Add(client);
                     db.SaveChanges();
-                    return RedirectToAction("Index", "Layout");
+                    return RedirectToAction("Index", "Locations");
                 }
                 AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return RedirectToAction("Index", "Locations");
         }
 
         //
