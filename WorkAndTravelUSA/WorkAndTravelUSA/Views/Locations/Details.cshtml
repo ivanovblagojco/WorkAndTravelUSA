@@ -108,6 +108,7 @@
     $(document).ready(function () {
         $(".ratingStar").hover(function () {
             $(".ratingStar").addClass("far").removeClass("fas");
+
             $(this).addClass("fas").removeClass("far");
             $(this).prevAll(".ratingStar").addClass("fas").removeClass("far");
         });
@@ -115,19 +116,41 @@
     $(".ratingStar").click(function () {
         var starValue = $(this).attr("data-value");
         $("#ratingsValue").val(starValue);
-        var jsonData = {
-            Id: @Model.Id,
-            Raiting: starValue
-        };
-        $.ajax({
-        type: "POST",
-        url: '@Url.Action("SaveLocationRating", "Locations")',
-        contentType: "application/json;charset=utf-8",
-        data: JSON.stringify(jsonData),
-        dataType: "json",
-        success: function() {
-            console.log("success");
-        }
-        });
+
+        //here I start
+                        $.ajax({
+                            url: "@Url.Action("GetAllUser","Locations")",
+                            data: "",
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                console.log(data);
+                                if (data == "Yes") {
+                                    var jsonData = {
+                                    Id: @Model.Id,
+                                    Raiting: starValue
+                                };
+
+
+                                $.ajax({
+                                type: "POST",
+                                url: '@Url.Action("SaveLocationRating", "Locations")',
+                                contentType: "application/json;charset=utf-8",
+                                data: JSON.stringify(jsonData),
+                                dataType: "json",
+                                success: function() {
+                                    console.log("success");
+                                }
+                                });
+                                }
+                                
+                            },
+                            error: function () {
+                                alert("Failed! Please try again.");
+                            }
+                        });
+        //here I end
+
+        
  });
 </script>

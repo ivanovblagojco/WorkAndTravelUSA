@@ -203,6 +203,7 @@ namespace WorkAndTravelUSA.Controllers
                     client.Surname = model.Surname;
                     client.Age = model.Age;
                     client.Address = model.Address;
+                    client.hasVote = "No";
                     db.clientModels.Add(client);
                     db.SaveChanges();
                     return RedirectToAction("Index", "Layout");

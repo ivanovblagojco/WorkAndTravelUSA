@@ -19,5 +19,6 @@ namespace WorkAndTravelUSA.Models
         public string Address { get; set; }
         [Range(15, 70, ErrorMessage = "Age must be a number larger than 15")]
         public int Age { get; set; }
+        public string hasVote { get; set; } //   Yes/No
     }
 }

@@ -104,6 +104,27 @@ namespace WorkAndTravelUSA.Controllers
             }
             return View(location);
         }
+        public JsonResult GetAllUser()
+        {
+            List<Client> clients = new List<Client>();
+
+            string canVote = "No";
+            clients = db.clientModels.ToList();
+            foreach (Client c in clients)
+            {
+                if (c.oduser == User.Identity.Name && c.hasVote == "No")
+                {
+                    canVote = "Yes";
+                    c.hasVote = "Yes";
+
+                    db.SaveChanges();
+                    break;
+                }
+
+            }
+
+            return new JsonResult { Data = canVote, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
 
         [HttpPost]
         public JsonResult SaveLocationRating(Location location)

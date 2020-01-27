@@ -234,6 +234,10 @@
     <Compile Include="Migrations\202001252324293_15Migration.Designer.cs">
       <DependentUpon>202001252324293_15Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001271008559_16thMigration.cs" />
+    <Compile Include="Migrations\202001271008559_16thMigration.Designer.cs">
+      <DependentUpon>202001271008559_16thMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddUserToRule.cs" />
@@ -473,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001252324293_15Migration.resx">
       <DependentUpon>202001252324293_15Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271008559_16thMigration.resx">
+      <DependentUpon>202001271008559_16thMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
